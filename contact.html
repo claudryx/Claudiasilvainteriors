@@ -1,50 +1,212 @@
-<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1"><style>
-:root{--bg:#f7f3ee;--text:#2e2925;--muted:#7a7068;--burgundy:#6b1f2b;}
-body{margin:0;font-family:Georgia,"Times New Roman",serif;background:var(--bg);color:var(--text);}
 
-nav{position:absolute;top:0;left:0;right:0;display:flex;justify-content:center;gap:16px;padding:26px;z-index:10;}
-nav a{color:white;text-decoration:none;font-size:11px;letter-spacing:.18em;text-transform:uppercase;}
-.nav-light a{color:var(--muted);}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contact | Claudia Silva Interiors</title>
 
-.hero{height:100vh;background:linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.25)),url('hero.jpeg') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;color:white;}
-.line1{display:block;font-weight:300;font-size:clamp(2.4rem,4.6vw,4rem);letter-spacing:.12em;}
-.line2{display:block;font-weight:300;font-size:clamp(1.3rem,2.6vw,2rem);letter-spacing:.18em;margin-top:10px;}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@200;300;400&display=swap" rel="stylesheet">
 
-.header{padding:100px 20px 20px;text-align:center;}
-.header span{color:var(--burgundy);font-size:26px;letter-spacing:.12em;}
+<style>
+:root{
+  --bg:#f7f3ee;
+  --text:#2e2925;
+  --muted:#7a7068;
+  --burgundy:#6b1f2b;
+}
 
-.section{max-width:1100px;margin:auto;padding:50px 30px;}
+*{box-sizing:border-box}
 
-.about-title{text-align:center;margin-bottom:25px;color:var(--burgundy);font-size:12px;letter-spacing:.2em;text-transform:uppercase;}
+html{
+  opacity:0;
+  transition:opacity .8s ease;
+  scroll-behavior:smooth;
+}
 
-.about p,.section-title,.project-title,.services p,.contact,footer{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);}
+html.page-ready{opacity:1}
 
-.about{max-width:700px;margin:auto;text-align:center;}
-.about p{line-height:2.2;margin-bottom:20px;}
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  font-family:'Playfair Display', serif;
+  background:var(--bg);
+  color:var(--text);
+}
 
-.project-title{text-align:center;margin-bottom:20px;}
+main{flex:1}
 
-.scroll-gallery{display:flex;overflow-x:auto;gap:20px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:10px;}
-.scroll-gallery::-webkit-scrollbar{display:none;}
-.scroll-img{height:420px;width:auto;flex-shrink:0;scroll-snap-align:start;border:none;outline:none;}
+nav{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  padding:26px 18px;
+  z-index:20;
+  flex-wrap:wrap;
+}
 
-.services{max-width:700px;margin:auto;text-align:center;line-height:2.2;}
+nav a{
+  text-decoration:none;
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:white;
+  transition:color .3s ease;
+}
 
-footer{text-align:center;padding:50px 20px;color:var(--burgundy);}
-</style></head>
+nav a:hover{
+  color:var(--burgundy);
+}
+
+.nav-light a{ color:var(--muted); }
+
+.hero{
+  min-height:100vh;
+  background:linear-gradient(rgba(0,0,0,.18), rgba(0,0,0,.22)), url('hero.jpeg') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+  padding:40px 20px;
+}
+
+.hero .line1{
+  display:block;
+  font-weight:200;
+  font-size:clamp(2.2rem,4.8vw,3.9rem);
+  letter-spacing:.12em;
+}
+
+.hero .line2{
+  display:block;
+  font-weight:200;
+  font-size:clamp(1.15rem,2.4vw,1.85rem);
+  letter-spacing:.24em;
+  margin-top:10px;
+}
+
+.header{
+  padding:98px 20px 18px;
+  text-align:center;
+}
+
+.header span{
+  color:var(--burgundy);
+  font-weight:300;
+  font-size:clamp(1.35rem,3vw,1.8rem);
+  letter-spacing:.18em;
+}
+
+.section{
+  max-width:1100px;
+  margin:auto;
+  padding:46px 30px;
+}
+
+.about-wrap,.services-wrap,.contact-wrap{
+  max-width:760px;
+  margin:auto;
+  text-align:center;
+}
+
+.about-copy p,.services-wrap p{
+  line-height:2.1;
+  margin-bottom:18px;
+  letter-spacing:.05em;
+}
+
+.project-title{
+  text-align:center;
+  margin:0 0 16px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-size:12px;
+}
+
+.scroll-gallery{
+  display:flex;
+  overflow-x:auto;
+  gap:18px;
+  scroll-snap-type:x mandatory;
+  padding-bottom:12px;
+}
+
+.scroll-img{
+  height:420px;
+  width:auto;
+  flex-shrink:0;
+  scroll-snap-align:start;
+  border:none;
+}
+
+footer{
+  text-align:center;
+  padding:40px 20px 50px;
+}
+
+footer img{
+  width:130px;
+  max-width:55%;
+  height:auto;
+}
+</style>
+</head>
+
 <body>
-<nav class="nav-light">
-<a href="index.html">About</a>
-<a href="gallery.html">Gallery</a>
-<a href="services.html">Services</a>
-<a href="contact.html">Contact</a>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="services.html">Services</a>
+  <a href="contact.html">Contact</a>
 </nav>
 
+
+<main>
 <div class="header"><span>Contact</span></div>
 
 <section class="section">
-<div class="contact">For any information or questions please email:<br><br>info@claudiasilvainteriors.com</div>
+<div class="contact-wrap">
+<p>For any information or questions please email:</p>
+<p>info@claudiasilvainteriors.com</p>
+</div>
 </section>
+</main>
 
-<footer>Claudia Silva Interiors</footer>
-</body></html>
+
+<footer>
+<img src="cs-logo.png" alt="CS Interiors logo">
+</footer>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.documentElement.classList.add('page-ready');
+
+  document.querySelectorAll('a[href$=".html"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (!href) return;
+      e.preventDefault();
+      document.documentElement.classList.remove('page-ready');
+      setTimeout(function () {
+        window.location.href = href;
+      }, 420);
+    });
+  });
+});
+</script>
+
+</body>
+</html>
