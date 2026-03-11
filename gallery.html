@@ -29,7 +29,7 @@ nav{
   top:0;left:0;right:0;
   display:flex;justify-content:center;gap:16px;
   padding:24px 14px;
-  z-index:20;flex-wrap:wrap
+  z-index:20;flex-wrap:wrap;
 }
 nav a{
   text-decoration:none;
@@ -42,22 +42,24 @@ nav a{
 .nav-light a{color:var(--burgundy)}
 .hero{
   min-height:100vh;
-  background:linear-gradient(rgba(0,0,0,.18), rgba(0,0,0,.22)), url('hero.jpeg') center/cover no-repeat;
+  background:
+    linear-gradient(rgba(0,0,0,.18), rgba(0,0,0,.22)),
+    url('hero.jpeg') center/cover no-repeat;
   display:flex;align-items:center;justify-content:center;
   text-align:center;color:white;padding:40px 20px;
 }
 .line1{
   display:block;
   font-weight:200;
-  font-size:clamp(2.2rem, 4.8vw, 3.9rem);
-  letter-spacing:.12em;
+  font-size:clamp(2.25rem, 5vw, 4rem);
+  letter-spacing:.18em;
   line-height:1.02;
 }
 .line2{
   display:block;
   font-weight:200;
-  font-size:clamp(1.15rem, 2.4vw, 1.85rem);
-  letter-spacing:.24em;
+  font-size:clamp(1.1rem, 2.2vw, 1.8rem);
+  letter-spacing:.35em;
   margin-top:10px;
 }
 .header{
@@ -101,8 +103,9 @@ nav a{
 }
 .scroll-gallery::-webkit-scrollbar{display:none}
 .scroll-img{
+  width:320px;
   height:420px;
-  width:auto;
+  object-fit:cover;
   flex-shrink:0;
   scroll-snap-align:start;
   display:block;
@@ -115,8 +118,8 @@ footer{
   background:var(--bg);
 }
 footer img{
-  width:150px;
-  max-width:58%;
+  width:182px;
+  max-width:72%;
   height:auto;
   display:inline-block;
 }
@@ -124,8 +127,8 @@ footer img{
   nav{gap:14px;padding:22px 10px}
   nav a{font-size:11px;letter-spacing:.16em}
   .header{padding:84px 16px 14px}
-  .scroll-img{height:300px}
-  footer img{width:132px;max-width:62%}
+  .scroll-img{width:250px;height:320px}
+  footer img{width:164px;max-width:74%}
 }
 </style></head>
 <body>
@@ -136,8 +139,7 @@ footer img{
   <a href="services.html">Services</a>
   <a href="contact.html">Contact</a>
 </nav>
-<main><div class="header">Gallery</div><section class="section"><div class="project-title">Project in the Cotswolds</div><div class="scroll-gallery"><img src="cots_0.jpeg" class="scroll-img" alt="Cotswolds project image">
-<img src="cots_1.jpeg" class="scroll-img" alt="Cotswolds project image">
+<main><div class="header">Gallery</div><section class="section"><div class="project-title">Project in the Cotswolds</div><div class="scroll-gallery"><img src="cots_1.jpeg" class="scroll-img" alt="Cotswolds project image">
 <img src="cots_10.jpeg" class="scroll-img" alt="Cotswolds project image">
 <img src="cots_11.jpeg" class="scroll-img" alt="Cotswolds project image">
 <img src="cots_12.jpeg" class="scroll-img" alt="Cotswolds project image">
