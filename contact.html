@@ -1,26 +1,166 @@
-
+<!DOCTYPE html>
 <html>
-<head>
+<head><title>Contact | Claudia Silva Interiors</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
-body{margin:0;font-family:'Playfair Display',serif;background:#f7f3ee;}
-nav{width:100%;text-align:center;padding:24px 0;}
-nav a{margin:0 12px;text-decoration:none;color:#6b1f2b;font-size:11px;letter-spacing:.18em;text-transform:uppercase;}
-footer{text-align:center;padding:40px;}
-footer img{width:80px;}
-</style>
-</head>
+:root{
+  --bg:#f7f3ee;
+  --text:#2e2925;
+  --burgundy:#6b1f2b;
+  --muted:#7a7068;
+}
+*{box-sizing:border-box}
+html{opacity:0;transition:opacity .8s ease;scroll-behavior:smooth}
+html.page-ready{opacity:1}
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  font-family:'Playfair Display', serif;
+  background:var(--bg);
+  color:var(--text);
+}
+main{flex:1}
+nav{
+  position:absolute;
+  top:0;left:0;right:0;
+  display:flex;justify-content:center;gap:16px;
+  padding:24px 14px;
+  z-index:20;
+  flex-wrap:wrap;
+}
+nav a{
+  text-decoration:none;
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  transition:color .3s ease;
+}
+.hero-nav a{color:white}
+.nav-light a{color:var(--burgundy)}
+.hero{
+  min-height:100vh;
+  background:
+    linear-gradient(rgba(0,0,0,.18), rgba(0,0,0,.22)),
+    url('hero.jpeg') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+  padding:40px 20px;
+}
+.line1{
+  display:block;
+  font-weight:200;
+  font-size:clamp(2.2rem, 5vw, 4rem);
+  letter-spacing:.18em;
+  line-height:1.02;
+}
+.line2{
+  display:block;
+  font-weight:200;
+  font-size:clamp(1.08rem, 2.2vw, 1.8rem);
+  letter-spacing:.35em;
+  line-height:1.02;
+  margin-top:10px;
+}
+.header{
+  text-align:center;
+  color:var(--burgundy);
+  padding:98px 20px 20px;
+  letter-spacing:.18em;
+  font-size:clamp(1.35rem,3vw,1.8rem);
+}
+.section{
+  max-width:1100px;
+  margin:auto;
+  padding:46px 22px;
+}
+.copy-wrap{
+  max-width:760px;
+  margin:auto;
+  text-align:center;
+}
+.copy-wrap p{
+  line-height:2.05;
+  margin:0 0 18px;
+  letter-spacing:.04em;
+}
+.project-title{
+  text-align:center;
+  margin:20px 0 16px;
+  color:var(--burgundy);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  font-size:12px;
+}
+.scroll-gallery{
+  display:flex;
+  overflow-x:auto;
+  gap:16px;
+  padding:6px 0 12px;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+  scroll-snap-type:x mandatory;
+}
+.scroll-gallery::-webkit-scrollbar{display:none}
+.scroll-img{
+  width:320px;
+  height:420px;
+  object-fit:cover;
+  flex-shrink:0;
+  scroll-snap-align:start;
+  display:block;
+  cursor:pointer;
+}
+.home-space{height:70px}
+footer{
+  text-align:center;
+  padding:42px 20px 50px;
+  background:var(--bg);
+}
+footer img{
+  width:88px;
+  max-width:42%;
+  height:auto;
+  display:inline-block;
+}
+@media (max-width:760px){
+  nav{gap:14px;padding:22px 10px}
+  nav a{font-size:11px;letter-spacing:.16em}
+  .header{padding:84px 16px 14px}
+  .scroll-img{width:250px;height:320px}
+  footer img{width:78px;max-width:44%}
+}
+</style></head>
 <body>
-<nav>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="gallery.html">Gallery</a>
-<a href="services.html">Services</a>
-<a href="contact.html">Contact</a>
+<nav class="nav-light">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="services.html">Services</a>
+  <a href="contact.html">Contact</a>
 </nav>
-<div style="max-width:800px;margin:auto;padding:60px;text-align:center;">
-<h2 style="color:#6b1f2b;">Contact</h2>
-<p>info@claudiasilvainteriors.com</p>
-</div>
-<footer><img src="cs-logo.png"></footer>
+<main><div class="header">Contact</div><section class="section"><div class="copy-wrap"><p>For enquiries please email:</p><p>info@claudiasilvainteriors.com</p></div></section></main><footer><img src="cs-logo.png" alt="CS Interiors logo"></footer>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.documentElement.classList.add('page-ready');
+  document.querySelectorAll('a[href$=".html"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (!href) return;
+      e.preventDefault();
+      document.documentElement.classList.remove('page-ready');
+      setTimeout(function () { window.location.href = href; }, 420);
+    });
+  });
+});
+</script>
 </body>
 </html>
